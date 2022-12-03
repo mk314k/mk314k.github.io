@@ -8,13 +8,13 @@ canvas {
     width: 100%;
 }
 .gameContainer{
-    height: 80vh;
-    width: 80vh;
+    height: calc(min(80vh,80vw));
+    width: calc(min(80vh,80vw));
     align-items: center;
-    margin-left: calc(50vw - 40vh);
+    margin-left: calc(50vw - min(80vh,80vw)/2);
     margin-top: 5vh;
 }
 #root {
     position: absolute;
-    inset: auto calc(50vw - 40vh) 93.5vh auto;
+    inset: auto calc(50vw - min(80vh,80vw)/2) 93.5vh auto;
 }
