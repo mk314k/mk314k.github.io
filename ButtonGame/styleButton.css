@@ -1,0 +1,20 @@
+body{
+    background-color: #e0e0e0;
+    align-items: center;
+}
+canvas {
+    border: 1px solid black;
+    height: 100%;
+    width: 100%;
+}
+.gameContainer{
+    height: 80vh;
+    width: 80vh;
+    align-items: center;
+    margin-left: calc(50vw - 40vh);
+    margin-top: 5vh;
+}
+#root {
+    position: absolute;
+    inset: auto calc(50vw - 40vh) 93.5vh auto;
+}
