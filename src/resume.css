@@ -1,0 +1,11 @@
+section{
+    width: 80vw;
+}
+.resume h2{
+    text-decoration-line: underline;
+}
+
+.contact{
+    margin-left: 1em;
+    margin-right: 1em;
+}
