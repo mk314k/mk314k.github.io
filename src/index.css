@@ -4,7 +4,7 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  color: whitesmoke;
   background-color: #242424;
 
   font-synthesis: none;
@@ -18,13 +18,23 @@ body {
   width: 100vw;
 }
 header{
-  height: 4vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 10vh;
   width: 100vw;
 }
 main{
-  height: max-content;
-  min-height: 94vh;
-  width: 100vw;
+  --m-left: min(300px, 30vw);
+  --m-right: min(50px, 5vw);
+  --m-top: 6vh;
+  height: calc(96vh - var(--m-top));
+  width: calc(100vw - var(--m-left) - var(--m-right));
+  margin-top: var(--m-top);
+  margin-left: var(--m-left);
+  margin-right: var(--m-right);
+  overflow-y: auto;
+  justify-content: flex-start !important;
 }
 footer {
   height: 2vh;
@@ -48,6 +58,7 @@ button {
   background-color: #ffffff45;
   cursor: pointer;
   transition: border-color 0.25s;
+  color: whitesmoke;
 }
 button:hover {
   border-color: #646cff;

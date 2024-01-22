@@ -1,0 +1,19 @@
+
+*{
+  border: 1px solid black;
+}
+.flex-vertical{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.flex-horizontal{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.space-between{
+  justify-content: space-between;
+}

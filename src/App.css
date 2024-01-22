@@ -1,8 +1,4 @@
-:root{
-  --bg-color: #00aafff8;
-  --bg-colr2: #046edecb;
 
-}
 *{
   margin: 0;
 }
@@ -20,43 +16,85 @@
   align-items: center;
 }
 
+
 #root {
   padding: 0;
   font-family: Arial, sans-serif;
-  background: linear-gradient(to bottom, var(--bg-color), var(--bg-colr2));
+  background: #12121212;
+  background-size: cover;
+  background-repeat: no-repeat;
   height: max-content;
   width: 100vw;
+  background-position: center bottom;
 }
+
+
 nav{
+  position: fixed;
+  top: 1vh;
+  right: 2vw;
+  min-width:max-content;
   max-height: 4vh;
-  background: linear-gradient(to bottom, var(--bg-color), var(--bg-colr2));
+  width: min(300px, 25vw);
+  background: #85858538;
   display: flex;
-  justify-content: space-between;
-  border-bottom: 2px;
-  border-top: 0;
-  border-left: 0;
-  border-right: 0;
-  border-color: #101010;
-  border-style: solid;
+  justify-content: space-evenly;
+  border-radius: 0% 25px 0% 25px;
+  box-sizing:border-box;
 }
+
 .nav-link{
   height: 4vh;
-  font-size: 0.7em;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-right: 5px;
+  margin-left: 5px;
 }
 
 .logo{
-  background: url('docs/assets/images/logo.png');
+  background: url('../assets/logo.png');
   background-repeat: no-repeat;
   background-size: contain;
   margin-top: 1vh;
   max-height: 7vh;
   width: 7vh;
 }
-.container, .resume {
-  color: white;
+
+/* Sidebar styles */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 3vh;
+  height: 90vh;
+  width: min(200px, 20vw);
+  padding: 20px;
+  background: #85858518;
+  border-radius: 0% 25% 25% 0%;
+}
+.section-title{
+  align-self: flex-start;
+  position: relative;
+}
+.section-title::after{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #ffbb5c;
+  border-radius: 3px;
+  width: 50px;
+  height: 5px;
+  display: block;
+}
+
+.container {
+  justify-content: space-evenly;
 }
 .name {
-  font-size: 2.5em;
+  font-size: min(2em, 5vw);
+}
+.subtitle{
+  font-size: min(1em, 2.1vw);
 }
 
 .social-icons {
@@ -64,15 +102,39 @@ nav{
 }
 .icon{
   margin: 0.5em;
-  font-size: 2em;
+  font-size: min(2em, 3.5vw);
 }
 a{
   color: #101010;
 }
-
+.resume{
+  font-size: min(1em, 1.9vw);
+}
 
 
 .games-container {
   height: 100vmin;
   width: 100vmin;
+}
+
+@media only screen and (max-width:500px){
+  main {
+    --m-left:min(50px, 5vw) !important;
+    --m-top: 20vh !important;
+  }
+
+  .sidebar {
+    top: 0;
+    width: 100vw;
+    height: min(150px, 15vh);
+    border-radius: 0% 0% 0% 25%;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  .fullname{
+    flex-direction: row;
+  }
+  .name{
+    margin-left: 7px;
+  }
 }
