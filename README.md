@@ -40,4 +40,3 @@ Feel free to reach out to me if you have any questions or want to connect:
 - LinkedIn: [Your LinkedIn profile URL]
 - Twitter: [Your Twitter handle]
 - [Any other relevant contact information]
-

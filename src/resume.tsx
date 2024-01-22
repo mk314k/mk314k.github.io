@@ -1,5 +1,4 @@
 import './resume.css';
-
 export const resume = {
     name: "Kartikesh Mishra",
     contact: {
@@ -143,12 +142,12 @@ export const resume = {
 export function Resume() {
     return (
       <>
-        <div className='resume flex-vertical'>
+        <div className='container resume flex-vertical'>
           <h1 className='name'>{resume.name}</h1>
           <div className='contact-section flex-horizontal'>
-            {Object.keys(resume.contact).map((key) => (
+            {Object.entries(resume.contact).map(([key, value]) => (
               <h3 className='contact' key={key}>
-                {resume.contact[key]}
+                {value}
               </h3>
             ))}
           </div>

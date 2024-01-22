@@ -14,25 +14,32 @@ const Portfolio: React.FC<{ username: string }> = ({ username }) => {
   }, [username]);
 
   return (
-    <div>
-      {repositories.filter(
-        (repo) => repo.topics.length >0
-      ).map((repo) => (
-        <div key={repo.id} className="card">
-          <a href={repo.html_url} target="_blank" rel="noopener noreferrer" className="card-title">
-            {repo.name}
-          </a>
-          {repo.description && <p className="card-description">{repo.description}</p>}
-          <div className="card-topics">
-            {repo.topics.map((topic) => (
-              <span key={topic} className="card-topic">
-                {topic}
-              </span>
-            ))}
-          </div>
+    <>
+      <div className='container'>
+        <h2 className="section-title">My Projects</h2>
+        <br />
+        <div className='card-container flex-horizontal'>
+          {repositories.filter(
+            (repo) => repo.topics.length >0
+          ).map((repo) => (
+            <div key={repo.id} className="card flex-vertical">
+              <a href={repo.html_url} target="_blank" rel="noopener noreferrer" className="card-title">
+                {repo.name}
+              </a>
+              <img className='card-display' src={`https://raw.githubusercontent.com/${username}/${repo.name}/main/display.gif`} alt={`display ${repo.name}`} />
+              {repo.description && <p className="card-description">{repo.description}</p>}
+              <div className="card-topics">
+                {repo.topics.map((topic) => (
+                  <span key={topic} className="card-topic">
+                    {topic}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
-      ))}
-    </div>
+      </div>
+    </>
   );
 };
 

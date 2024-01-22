@@ -1,19 +1,30 @@
+.card-container {
+  justify-content: space-evenly;
+}
 .card {
     border: 1px solid #ccc;
     border-radius: 8px;
     padding: 20px;
     margin-bottom: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: min(300px, 70vw);
+    height: max(30vh, 400px);
+    background-color: #88888845;
   }
   
   .card-title {
-    font-size: 24px;
+    font-size: 1.2em;
     font-weight: bold;
     margin-bottom: 10px;
   }
+  .card-display{
+    width: min(250px, 50vw);
+    height: max(15vh, 200px);
+    z-index: 2;
+  }
   
   .card-description {
-    font-size: 16px;
+    font-size: 1em;
     margin-bottom: 10px;
   }
   
