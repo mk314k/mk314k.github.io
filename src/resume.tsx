@@ -1,4 +1,6 @@
 import './resume.css';
+import { useState } from 'react';
+
 export const resume = {
     name: "Kartikesh Mishra",
     contact: {
@@ -26,46 +28,56 @@ export const resume = {
         }
     ],
     courses: {
-        undergrad: [
+        Fundamentals: [
             "Machine Learning", "Design and Analysis of Algorithms", "Foundation of Statistics", 
             "Elements of Software Construction", "Computational Structures", "Fundamentals of Programming", 
             "Real Analysis"
         ],
-        grad: [
-            "Computer Vision", "Advanced Computational Photography", "Large Language Models", "Matrix Methods"
+        'Specialized (Graduate)': [
+            "Deep Learning", "Computer Vision", "Advanced Computational Photography", "Large Language Models", "Matrix Methods", "Theory of Probability"
         ]
     },
     skills: {
-        general: [
+        General: [
             "Python", "C++", "Typescript", "Arduino", "ESP32", "Jetson Tx2", "Proteus", "ROS", "Linux", "Bash", "Git", "VS Code", "Vim"
         ],
-        ml: [
+        'Machine Learning': [
             "Tensorflow", "Pytorch", "Transformer Lens", "NumPy", "OpenCV", "Scikit-Learn"
         ],
-        web: [
+        'Web Development': [
             "HTML", "CSS", "Javascript", "React", "Node.js", "Express.js", "SQL"
         ]
     },
     experiences: [
         {
+          title: "ML Lab Assistant, Intro to Machine Learning",
+          timespan: "Sept 2023 - Dec 2023",
+          company: "Electrical Engineering and Computer Science (EECS) Department, MIT",
+          location: "Cambridge, MA",
+          work: [
+              "Supervised and facilitated collaborative group sessions for 50 students in weekly interactive ML labs, enhancing their understanding of neural networks, decision trees, and reinforcement learning",
+              "Conducted weekly office hours to provide personalized assistance to students and evaluate their progress on lab assignments"
+          ]
+        },
+        {
+          title: "Undergraduate ML Research Assistant",
+          timespan: "Nov 2022 - Aug 2023",
+          company: "Tegmark Group, MIT",
+          location: "Kathmandu, Nepal",
+          work: [
+              "Conducted an extensive analysis of activations of transformer models across layers using TransformerLens and PyTorch",
+              "Investigated differential ranking algorithms and designed a probing ML classifier to identify optimal weight configurations in models for ordinal data processing",
+          ]
+        },
+        {
             title: "Machine Learning Research Intern",
-            timespan: "June 2022 - August 2022",
+            timespan: "June 2022 - Aug 2022",
             company: "Open Learning Exchange Nepal, MISTI MIT",
             location: "Kathmandu, Nepal",
             work: [
                 "Developed a pdf parser model to detect and classify text, images, and tables using OpenCV; tested on 200 pdf pages with 99% accuracy",
                 "Created custom data structure for document pages using underlying geometric bounds to speed up the parser model by 10 times",
                 "Designed a deep learning architecture, Convolutional Recurrent Neural Network using TensorFlow for Devanagari and English text recognition"
-            ]
-        },
-        {
-            title: "ML Lab Assistant, Intro to Machine Learning",
-            timespan: "January 2022 - May 2022",
-            company: "Electrical Engineering and Computer Science (EECS) Department, MIT",
-            location: "Cambridge, MA",
-            work: [
-                "Supervised a collaborative group session of 50 students in weekly interactive ML labs and examined their lab assignment progress",
-                "Held weekly office hours to help students understand ML content such as neural networks, decision trees, reinforcement learning, and more"
             ]
         },
         {
@@ -140,10 +152,16 @@ export const resume = {
 } as const
 
 export function Resume() {
+  const [showAllExperiences, setShowAllExperiences] = useState(false);
+
+  const toggleShowExperiences = () => {
+    setShowAllExperiences(!showAllExperiences);
+  };
     return (
       <>
         <div className='container resume flex-vertical'>
-          <h1 className='name'>{resume.name}</h1>
+          <div>
+          {/* <h1 className='name'>{resume.name}</h1>
           <div className='contact-section flex-horizontal'>
             {Object.entries(resume.contact).map(([key, value]) => (
               <h3 className='contact' key={key}>
@@ -167,53 +185,82 @@ export function Resume() {
                 ))}
               </div>
             ))}
+          </section> */}
+          </div>
+          <div className='exp-skill flex-horizontal'>
+          <section className='experience-section'>
+            <h2 className='section-title'>Experiences</h2>
+            <div className='experience-container'>
+              {resume.experiences.slice(0, showAllExperiences ? undefined : 4).map((experience, index) => (
+                <div className="experience-item" key={index}>
+                  <div className='role flex-horizontal'>
+                    <h3>{experience.title}</h3>
+                    <p>{experience.timespan}</p>
+                  </div>
+                  <div className='company flex-horizontal'>
+                    <p>{experience.company}</p>
+                    <p>{experience.location}</p>
+                  </div>
+                  <ul>
+                    {experience.work.map((item, idx) => (
+                      <li key={idx}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+              {!showAllExperiences && (
+                <p className="show-more-button" onClick={toggleShowExperiences}>
+                  Show More
+                </p>
+              )}
+            </div>
+          </section>
+          <section className='skill-section'>
+            <h2 className='section-title'>Skills</h2>
+            {Object.entries(resume.skills).map(([category, skills])=>(
+              <div className='flex-horizontal'>
+                <h3>{category}</h3>
+                <p>{skills.join(", ")}</p>
+              </div>
+            ))}
+          </section>
+          </div>
+          <section>
+            <h2 className='section-title'>Projects</h2>
+            <div className='project-container flex-horizontal'>
+              {resume.projects.map((project, index) => (
+                <div className="project-item" key={index}>
+                  <h3>{project.name}</h3>
+                  <p>Tools: {project.tools.join(", ")}</p>
+                  <p>{project.description}</p>
+                  <a href={project.code}>GitHub Link</a>
+                </div>
+              ))}
+            </div>
           </section>
           <section>
-            <h2>Experiences</h2>
-            {resume.experiences.map((experience, index) => (
-              <div className="experience-item" key={index}>
-                <div className='role flex-horizontal'>
-                  <h3>{experience.title}</h3>
-                  <p>{experience.timespan}</p>
-                </div>
-                <div className='company flex-horizontal'>
-                  <p>{experience.company}</p>
-                  <p>{experience.location}</p>
-                </div>
-                <ul>
-                  {experience.work.map((item, idx) => (
-                    <li key={idx}>{item}</li>
-                  ))}
-                </ul>
+            <h2 className='section-title'>CourseWork</h2>
+            {Object.entries(resume.courses).map(([category, courses])=>(
+              <div className='course-item'>
+                <h3>{category}</h3>
+                <p>{courses.join(", ")}</p>
               </div>
             ))}
           </section>
           <section>
-            <h2>Projects</h2>
-            {resume.projects.map((project, index) => (
-              <div className="project-item" key={index}>
-                <h3>{project.name}</h3>
-                <p>Tools: {project.tools.join(", ")}</p>
-                <p>{project.description}</p>
-                <a href={project.code}>GitHub Link</a>
-              </div>
-            ))}
-          </section>
-          <section>
-            <h2>Extracurriculars</h2>
+            <h2 className='section-title'>Extracurriculars</h2>
             {resume.eca.map((activity, index) => (
               <div className="eca-item" key={index}>
-                <h3>{activity.name}</h3>
-                <p>Role: {activity.role}</p>
-                <p>{activity.description}</p>
+                <h3>{activity.name + ' ('+activity.role+')'}</h3>
+                <ul><li>{activity.description}</li></ul>
               </div>
             ))}
           </section>
           <section>
-            <h2>Awards</h2>
+            <h2 className='section-title'>Awards</h2>
             {resume.awards.map((award, index) => (
               <div className="award-item" key={index}>
-                <h3>{award.name}</h3>
+                <p>{award.name}</p>
               </div>
             ))}
           </section>

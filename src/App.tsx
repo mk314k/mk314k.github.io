@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css'
 import { Resume } from './resume';
 import Portfolio from './Portfolio';
-import Games from './games';
 
 const links = new Map([
   ['github','https://github.com/mk314k'],
@@ -32,8 +31,6 @@ function Header() {
     <>
       <header>
         <nav>
-          {/* <div className="logo"></div>
-          <img src='../assets/logo.png' alt='Logo'></img> */}
           <div>
             <Link to="/">
               <span className="nav-link">About</span>
@@ -51,7 +48,7 @@ function Header() {
   );
 }
 function Home(){
-  const [isExpanded, setExpanded] = useState(true);
+  const [isExpanded, setExpanded] = useState(false);
   const toggleExpand = () => {
     setExpanded(!isExpanded);
   };
@@ -132,7 +129,7 @@ function SideBar(){
           <SocialIcon />
           <p></p>
           <Link to="/resume">
-            <button className="resume">View my Resume</button>
+            <button className="resume-button">View my Resume</button>
           </Link>
         </div>
       </div>
@@ -147,17 +144,16 @@ function App() {
       <Header />
       <SideBar />
       <main className='flex-vertical'>
-        {/* <div className='flex-vertical main-content'> */}
           <Routes>
-            <Route path="/" element={<Home></Home>} />
-            <Route path="/resume" element={<Resume></Resume>} />
-            <Route path="/project" element={Portfolio({username:"mk314k"})} />
-            <Route path="/games" element={Games({username:"mk314k"})} />
+            <Route path="/" element={<Home />} />
+            <Route path="/resume" element={<Resume />} />
+            <Route path="/project" element={<Portfolio username="mk314k" />} />
           </Routes>
-        {/* </div> */}
       </main>
       <footer>
-
+        <div className="footer">
+          <p>&copy; 2024 Kartikesh Mishra. All rights reserved.</p>
+        </div>
       </footer>
     </Router>
   )
