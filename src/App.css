@@ -74,6 +74,7 @@ nav{
 .section-title{
   align-self: flex-start;
   position: relative;
+  margin-bottom: 10px;
 }
 .section-title::after{
   content: '';
@@ -107,8 +108,18 @@ nav{
 a{
   color: #101010;
 }
-.resume{
+.resume-button{
   font-size: min(1em, 1.9vw);
+}
+
+.footer{
+  position: fixed;
+  background: #85858538;
+  height: 2.5vh;
+  width: max-content;
+  right: 4vw;
+  border-radius: 5px;
+  color: skyblue;
 }
 
 
@@ -122,6 +133,12 @@ a{
     --m-left:min(50px, 5vw) !important;
     --m-top: 20vh !important;
   }
+  nav {
+    z-index: 2;
+  }
+  .nav-link{
+    font-size: 1em;
+  }
 
   .sidebar {
     top: 0;
@@ -130,6 +147,7 @@ a{
     border-radius: 0% 0% 0% 25%;
     flex-direction: row;
     justify-content: space-evenly;
+    z-index: 1;
   }
   .fullname{
     flex-direction: row;

@@ -1,11 +1,63 @@
 section{
-    width: 80vw;
+    width: calc(100vw - var(--m-left) - var(--m-right));
 }
-.resume h2{
+
+.resume{
+    background: linear-gradient(to bottom, #38389828, #78787848);
+    border-bottom-right-radius: 15%;
+}
+
+.experience-container li{
+    max-width: 1000px;
+    word-wrap: break-word;
+}
+
+.project-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px; /* Adjust spacing between cards */
+    padding: 20px;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+  }
+  
+  .project-item {
+    flex: 0 0 auto;
+    width: 300px; /* Adjust card width as needed */
+    height: 250px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .project-item:hover {
+    transform: translateY(-4px);
+  }
+  
+.course-item{
+    justify-content: flex-start;
+}
+
+/* .resume h2{
     text-decoration-line: underline;
-}
+} */
 
 .contact{
     margin-left: 1em;
     margin-right: 1em;
 }
+
+@media only screen and (min-width:500px){
+    .experience-section{
+        max-width: 80%;
+    }
+    .skill-section{
+        width: 17%;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+  }
+
+  

@@ -21,8 +21,9 @@ header{
   position: fixed;
   top: 0;
   left: 0;
-  height: 10vh;
+  height: 4vh;
   width: 100vw;
+  z-index: 2;
 }
 main{
   --m-left: min(300px, 30vw);
