@@ -63,7 +63,7 @@ export const resume = {
           title: "Undergraduate ML Research Assistant",
           timespan: "Nov 2022 - Aug 2023",
           company: "Tegmark Group, MIT",
-          location: "Kathmandu, Nepal",
+          location: "Cambridge, MA",
           work: [
               "Conducted an extensive analysis of activations of transformer models across layers using TransformerLens and PyTorch",
               "Investigated differential ranking algorithms and designed a probing ML classifier to identify optimal weight configurations in models for ordinal data processing",
