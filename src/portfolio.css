@@ -8,12 +8,12 @@
     margin-bottom: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     width: min(300px, 70vw);
-    height: max(30vh, 400px);
+    height: max(35vh, 450px);
     background-color: #88888845;
   }
   
   .card-title {
-    font-size: 1.2em;
+    font-size: 1.3em;
     font-weight: bold;
     margin-bottom: 10px;
   }
@@ -35,7 +35,7 @@
   }
   
   .card-topic {
-    background-color: #007bff;
+    background-color: #007bff60;
     color: #fff;
     border-radius: 4px;
     padding: 4px 8px;

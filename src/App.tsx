@@ -57,20 +57,20 @@ function Home(){
       <div className="container flex-vertical">
           <h2 className="section-title">About me</h2>
           <p className="about">
-            Hi! I'm Kartikesh, an undergraduate student at MIT, pursuing a dual major in Computer Science & Engineering and Mathematics (Class of 2024). 
-            My academic journey at MIT has been a dynamic exploration, delving into the realms of Machine Learning (ML), Analysis, Probability, and 
-            Statistics on the technical side, and Philosophy on the non-technical side. During my time at MIT, I've actively engaged in cutting-edge 
-            research, particularly focusing on Robotics and ML, with a keen interest in the interpretability of Large Language Models. 
+            Hi! I'm Kartikesh, an undergraduate student at MIT, pursuing a double major in Computer Science & Engineering and Mathematics (Class of 2024). 
+            At MIT, I have taken classes in the field of Machine Learning (ML), Analysis, Probability, Statistics and Philosophy while my major research  
+            interests have been Machine Learning Applications and Interpretability for both Vision Models and Large Language Models.
           </p><br />
           {
             isExpanded ? (
               <>
                 <p className="about">
-                  Beyond the academic sphere, I contribute to the Momentum Ai club, where we empower underprivileged high school students in the Boston Area 
-                  with knowledge in AI and ML. I'm also a member of MITeri, a club fostering the Nepali community and those fascinated by Nepali cultures. 
+                  Beyond academics, I am part of Momentum AI club, where we empower underprivileged high school students in the Boston Area 
+                  with knowledge in AI and ML. I'm also a member of MITeri, a club fostering the Nepali community and those fascinated by Nepali cultures
+                  at MIT. 
                 </p><br />
                 <p className="about">
-                  In my leisure, I channel my passion for AI/ML and general Software Development into intriguing mini projects, many of which you can explore 
+                  In my free time, I channel my passion for AI/ML and general Software Development into intriguing mini projects, many of which you can explore 
                   on this website. Among my recent projects is "Pyssemble," a fusion of Python and assembly to simplify debugging for those learning Assembly. 
                   Another project of mine is "R3DVAE-GAN," where I blend Attention in transformers with VAE-GAN architecture to facilitate the generation of 
                   3D images from 2D counterparts.
@@ -125,7 +125,7 @@ function SideBar(){
         <div className='flex-vertical'>
           <br />
           <p className='subtitle'>Software Developer</p>
-          <p className='subtitle'>ML Researcher</p>
+          <p className='subtitle'>ML Enthusiast</p>
           <SocialIcon />
           <p></p>
           <Link to="/resume">
