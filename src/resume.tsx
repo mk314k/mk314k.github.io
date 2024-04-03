@@ -15,6 +15,11 @@ export const resume = {
             location: "Cambridge, MA",
             degree: [
                 {
+                  name: "Master of Engineering in Computer Science (Artificial Intelligence)",
+                  score: "",
+                  graduation: "Class of 2024"
+                },
+                {
                     name: "Bachelor of Engineering in Computer Science & Engineering",
                     score: "",
                     graduation: "Class of 2024"
@@ -49,24 +54,25 @@ export const resume = {
         ]
     },
     experiences: [
-        {
-          title: "ML Lab Assistant, Intro to Machine Learning",
-          timespan: "Sept 2023 - Dec 2023",
-          company: "Electrical Engineering and Computer Science (EECS) Department, MIT",
-          location: "Cambridge, MA",
-          work: [
-              "Supervised and facilitated collaborative group sessions for 50 students in weekly interactive ML labs, enhancing their understanding of neural networks, decision trees, and reinforcement learning",
-              "Conducted weekly office hours to provide personalized assistance to students and evaluate their progress on lab assignments"
-          ]
-        },
+        // {
+        //   title: "ML Lab Assistant, Intro to Machine Learning",
+        //   timespan: "Sept 2023 - Dec 2023",
+        //   company: "Electrical Engineering and Computer Science (EECS) Department, MIT",
+        //   location: "Cambridge, MA",
+        //   work: [
+        //       "Supervised and facilitated collaborative group sessions for 50 students in weekly interactive ML labs, enhancing their understanding of neural networks, decision trees, and reinforcement learning",
+        //       "Conducted weekly office hours to provide personalized assistance to students and evaluate their progress on lab assignments"
+        //   ]
+        // },
         {
           title: "Undergraduate ML Research Assistant",
           timespan: "Nov 2022 - Aug 2023",
           company: "Tegmark Group, MIT",
           location: "Cambridge, MA",
           work: [
-              "Conducted an extensive analysis of activations of transformer models across layers using TransformerLens and PyTorch",
-              "Investigated differential ranking algorithms and designed a probing ML classifier to identify optimal weight configurations in models for ordinal data processing",
+              "Achieved >95% accuracy on both train and test datasets by training over 50 one and two-layer transformer models for learning ordinal information, utilizing GPT-2 architecture with varying hyperparameters and parameter sizes.",
+              "Identified neurons responsible for processing ordinal information, achieving a 60% accuracy from the selected neurons, a significant improvement compared to the 15% accuracy of its untrained counterparts; conducted through extensive analysis of encoder representations and attention activations of transformer models using TransformerLens and PyTorch.",
+              "Designed a rank probing method to measure the contribution of neurons to ordinal information processing, enhancing the understanding of model performance by investigating differential ranking algorithms from the literature."
           ]
         },
         {
@@ -75,9 +81,9 @@ export const resume = {
             company: "Open Learning Exchange Nepal, MISTI MIT",
             location: "Kathmandu, Nepal",
             work: [
-                "Developed a pdf parser model to detect and classify text, images, and tables using OpenCV; tested on 200 pdf pages with 99% accuracy",
-                "Created custom data structure for document pages using underlying geometric bounds to speed up the parser model by 10 times",
-                "Designed a deep learning architecture, Convolutional Recurrent Neural Network using TensorFlow for Devanagari and English text recognition"
+                "Achieved 99% accuracy in detecting and classifying text and images in scanned PDF by developing a parser using OpenCV and Ghostscript; originally designed to assist manual data collection but was more used like automation.",
+                "Improved the computational speed of the parser model 10x by engineering custom geometry-based data structures, and dynamically merging overlapped bounding rectangles.",
+                "Designed an end-to-end deep learning architecture (Convolutional Recurrent Neural Network) using TensorFlow for Devanagari and English text recognition."
             ]
         },
         {
@@ -86,9 +92,9 @@ export const resume = {
             company: "Computer Science and Artificial Intelligence Laboratory (CSAIL), MIT",
             location: "Cambridge, MA",
             work: [
-                "Developed a ROS program to auto-collect data from various sensors (including camera) for DJI Matrix 300 drones",
-                "Built a ROS framework in a team of 3 to allow a single code run in both Flightmare Simulator and physical drone",
-                "Developed drone autonomy software for autonomous flight with velocity control and path planning"
+                "Developed a ROS program to auto-collect data from various sensors (including camera) for DJI Matrix 300 drones.",
+                "Built a ROS framework in a team of 3 to allow a single code run in both Flightmare Simulator and physical drone.",
+                "Developed drone autonomy software for autonomous flight with velocity control and path planning."
             ]
         }
     ],

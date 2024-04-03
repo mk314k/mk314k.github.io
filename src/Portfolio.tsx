@@ -4,6 +4,7 @@ import './portfolio.css'; // Import the CSS file for styling
 
 const Portfolio: React.FC<{ username: string }> = ({ username }) => {
   const [repositories, setRepositories] = useState<Repository[]>([]);
+  const defaultImg = "https://raw.githubusercontent.com/mk314k/mk314k.github.io/gh-pages/assets/logo-e99f5fa1.png";
 
   useEffect(() => {
     async function fetchRepositories() {
@@ -26,7 +27,13 @@ const Portfolio: React.FC<{ username: string }> = ({ username }) => {
               <a href={repo.html_url} target="_blank" rel="noopener noreferrer" className="card-title">
                 {repo.name}
               </a>
-              <img className='card-display' src={`https://raw.githubusercontent.com/${username}/${repo.name}/main/display.gif`} alt={`display ${repo.name}`} />
+              <img 
+                className='card-display' src={`https://raw.githubusercontent.com/${username}/${repo.name}/main/display.gif`} 
+                alt={`display ${repo.name}`} 
+                onError={(e)=>{
+                  (e.target as HTMLImageElement).src = defaultImg;
+                }}
+              />
               {repo.description && <p className="card-description">{repo.description}</p>}
               <div className="card-topics">
                 {repo.topics.map((topic) => (
