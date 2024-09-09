@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Repository, getRepositories } from './GithubAPI'; 
+import { Repository, getRepositories } from './portfolio/GithubAPI'; 
 import './portfolio.css'; 
 
 const Games: React.FC<{ username: string }> = ({ username }) => {
