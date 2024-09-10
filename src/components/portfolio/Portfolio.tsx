@@ -4,7 +4,7 @@ import './portfolio.css'; // Import the CSS file for styling
 
 const Portfolio: React.FC<{ username: string }> = ({ username }) => {
   const [repositories, setRepositories] = useState<Repository[]>([]);
-  const defaultImg = "https://raw.githubusercontent.com/mk314k/mk314k.github.io/gh-pages/assets/logo-e99f5fa1.png";
+  const defaultImg = "https://raw.githubusercontent.com/mk314k/mk314k.github.io/main/assets/logo.png";
 
   useEffect(() => {
     async function fetchRepositories() {
