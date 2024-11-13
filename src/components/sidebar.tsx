@@ -11,12 +11,12 @@ export function SideBar(){
               <h2 className="name">{profile.last_name}</h2>
             </div>
             <br />
-            {profile.sidebar.map((descrip_group, ___)=>{
+            {profile.sidebar.map((descrip_group, ix)=>{
                 return (
                     <>
-                        {descrip_group.map((descrip, ___)=>{
+                        {descrip_group.map((descrip, iy)=>{
                             return (
-                                <p className="subtitle">{descrip}</p>
+                                <p key={`${ix}${iy}`} className="subtitle">{descrip}</p>
                             );
                         })}
                         <br />

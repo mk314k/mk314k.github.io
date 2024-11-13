@@ -16,7 +16,8 @@
     "fs": "^0.0.1-security",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.14.2"
+    "react-router-dom": "^6.14.2",
+    "statebinderk": "^0.0.2"
   },
   "devDependencies": {
     "@types/react": "^18.0.37",

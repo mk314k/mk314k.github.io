@@ -186,6 +186,12 @@ main{
     overflow-y: auto;
     justify-content: flex-start !important;
 }
+  .about{
+    width: 79%;
+  }
+  .writing{
+    width: 20%;
+  }
 footer {
     height: 2vh;
     width: 100vw;
