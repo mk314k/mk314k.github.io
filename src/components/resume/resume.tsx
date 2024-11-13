@@ -2,6 +2,8 @@ import './resume.css';
 import { useState } from 'react';
 import { resume } from '../../content/resume';
 
+// const categories = ["All", "AI/ML", "Web Dev", "Teaching", "Web3"];
+
 export function Resume() {
   const [showAllExperiences, setShowAllExperiences] = useState(false);
 
@@ -15,16 +17,22 @@ export function Resume() {
           <section className='experience-section'>
             <h2 className='section-title'>Experiences</h2>
             <div className='experience-container'>
-              {resume.experiences.slice(0, showAllExperiences ? undefined : 4).map((experience, index) => (
+              {resume.experiences.slice(0, showAllExperiences ? undefined : 3).map((experience, index) => (
                 <div className="experience-item" key={index}>
-                  <div className='role flex-horizontal'>
-                    <h3>{experience.title}</h3>
-                    <p>{experience.timespan}</p>
-                  </div>
                   <div className='company flex-horizontal'>
-                    <p>{experience.company}</p>
+                    <h3>{experience.company}</h3>
                     <p>{experience.location}</p>
                   </div>
+                  {experience.title_timespan.map((tt, _) => (
+                    <div className='role flex-horizontal'>
+                      <p>{tt[0]}</p>
+                      <p>{tt[1]}</p>
+                    </div>
+                  ))}
+                  {/* <div className='role flex-horizontal'>
+                    <p>{experience.title}</p>
+                    <p>{experience.timespan}</p>
+                  </div> */}
                   <ul>
                     {experience.work.map((item, idx) => (
                       <li key={idx}>{item}</li>
@@ -51,7 +59,7 @@ export function Resume() {
           </div>
           <section>
             <h2 className='section-title'>Projects</h2>
-            <div className='project-container flex-horizontal'>
+            <div className='project-container'>
               {resume.projects.map((project, index) => (
                 <div className="project-item" key={index}>
                   <h3>{project.name}</h3>
