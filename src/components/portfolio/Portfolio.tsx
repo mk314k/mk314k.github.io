@@ -58,11 +58,25 @@ const Portfolio: React.FC<{ username: string }> = ({ username }) => {
                 </a>
               </div>
               <div className="card-content">
-                <img 
+                {/* <img 
                   className='card-display' src={`https://raw.githubusercontent.com/${username}/${repo.name}/main/display.gif`} 
                   alt={`display ${repo.name}`} 
                   onError={(e)=>{
                     (e.target as HTMLImageElement).src = defaultImg;
+                  }}
+                /> */}
+                <img 
+                  className='card-display' 
+                  src={`https://raw.githubusercontent.com/${username}/${repo.name}/main/display.gif`} 
+                  alt={`display ${repo.name}`} 
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    if (target.getAttribute('data-attempt') === 'webp') {
+                      target.src = defaultImg;
+                    } else {
+                      target.setAttribute('data-attempt', 'webp');
+                      target.src = `https://raw.githubusercontent.com/${username}/${repo.name}/main/display.webp`;
+                    }
                   }}
                 />
                 {repo.description && <p className="card-description">{repo.description}</p>}
