@@ -3,7 +3,7 @@ import { Repository, getRepositories } from './GithubAPI';
 import './portfolio.css';
 // import { FaGithub } from 'react-icons/fa';
 
-const categories = ["All", "AI-ML", "WebApp", "Game", "Others"];
+const categories = ["All", "AI-ML", "WebApp", "Game", "Library", "Others"];
 
 const Portfolio: React.FC<{ username: string }> = ({ username }) => {
   const [repositories, setRepositories] = useState<Repository[]>([]);
@@ -89,10 +89,21 @@ const Portfolio: React.FC<{ username: string }> = ({ username }) => {
                   ))}
               </div>
               <div>
-                {(repo.topics.includes("webapp") || repo.topics.includes("game")) && (
-                  <a href={repo.homepage} target="_blank" rel="noopener noreferrer" className="extra-button">
-                    Visit Web
-                  </a>
+                {(repo.topics.includes("webapp") || 
+                  repo.topics.includes("game") || 
+                  repo.topics.includes("library")) && (
+                    <a 
+                      href={repo.homepage} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="extra-button"
+                    >
+                      {repo.topics.includes("webapp") 
+                        ? "Visit App" 
+                        : repo.topics.includes("game") 
+                        ? "Play Game" 
+                        : "Explore Library"}
+                    </a>
                 )}
               </div>
             </div>

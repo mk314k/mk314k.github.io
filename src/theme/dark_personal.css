@@ -21,6 +21,9 @@
     justify-content: center;
     align-items: center;
   }
+  .br{
+    height: 3vh;
+  }
 
 /* Some Design Choices on colors, anchor and button */
 *{
@@ -228,17 +231,47 @@ footer {
     .sidebar {
       top: 0;
       width: 100vw;
-      height: min(150px, 15vh);
+      height: min(100px, 10vh);
       border-radius: 0% 0% 0% 25%;
       flex-direction: row;
+      flex-wrap: wrap;
       justify-content: space-evenly;
       z-index: 1;
+      padding: 25px;
+      padding-left: 0;
+      padding-top: min(50px, 5vh);
+    }
+    .br{
+      display: none;
     }
     .fullname{
       flex-direction: row;
+      position: fixed;
+      top: 1vh;
+      left: 0;
     }
     .name{
       margin-left: 7px;
+    }
+    .social-icons{
+      margin-left: 10vw;
+    }
+
+
+    .section-title{
+      margin-left: var(--m-left);
+    }
+    .about-wrapper{
+      flex-direction: column;
+    }
+    .about{
+      width: 90vw;
+    }
+    .writing{
+      width: 100vw;
+    }
+    .categories{
+      flex-wrap: wrap;
     }
   }
   

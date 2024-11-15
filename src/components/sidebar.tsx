@@ -13,14 +13,14 @@ export function SideBar(){
             <br />
             {profile.sidebar.map((descrip_group, ix)=>{
                 return (
-                    <>
+                    <div className="flex-vertical">
                         {descrip_group.map((descrip, iy)=>{
                             return (
                                 <p key={`${ix}${iy}`} className="subtitle">{descrip}</p>
                             );
                         })}
-                        <br />
-                    </>
+                        <span className="br"></span>
+                    </div>
                 );
             })}
             <SocialIcon />
