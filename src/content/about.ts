@@ -1,18 +1,18 @@
 export const About = {
-    main: `Hi! I’m Kartikesh, an MEng student in MIT’s EECS Department specializing in AI and Machine Learning. My current research focuses on inverse problem in imaging applications, 
-            where I combine plug-and-play solvers, CNN-based denoisers, and reinforcement learning techniques. I’m especially interested in meta-learning and interpretability 
-            for vision and language models, aiming to understand patterns that support highly generalized learning. My academic interests also include analysis, probability, 
-            software design, and philosophy.`,
-    para: [
-        `Beyond my studies, I’ve enjoyed teaching and mentoring. I’ve been a teaching assistant at MIT for Machine Learning and Advanced Computer Vision,
-        and for two summers, I mentored high school students in AI and ML through MIT’s Momentum AI Club.`,
-        `In my free time, I work on various AI/ML and software projects, many of which you can explore here. Recent projects include 
-        “Pyssemble,” a Python-Assembly debugging tool, and “R3DVAE-GAN,” which combines transformer-based attention with VAE-GANs to generate 3D images.
-        `,
-        `If you’re interested in MetaLearning, AI safety or ML applications especially in EdTech, feel free to connect—I’m always open to new ideas, discussions and collaborations.`
-    ]
+    head: `Hi! I’m Kartikesh, a researcher and engineer passionate about building adaptive and interpretable machine learning systems.
+             I recently completed my MEng in Computer Science at MIT, where my thesis focused on reinforcement learning for 
+             autonomous drones, integrating multimodal visual and language cues for policy control and simulation-to-real transfer.`,
+    body: [
+        `I’m currently a Founding Engineer at Infinirate, Inc., where I am building a distributed infrastructure for agentic AI systems, 
+        working across backend systems, ML integration, and product design. 
+        Beyond engineering, I love teaching and mentoring—I’ve served as a TA for Machine Learning and Advanced Computer Vision at MIT 
+        and mentored students in AI through MIT’s Momentum program.`,
+        `In my spare time, I explore projects at the intersection of ML and software design, including Pyssemble, a Python-Assembly 
+        debugging tool, and R3DVAE-GAN, a transformer-based VAE-GAN for 3D object generation.`,
+    ],
+    foot: `If you’re interested in reinforcement learning, meta-learning, or building practical AI systems, 
+        feel free to connect—I’m always open to new ideas and collaborations.`
 }
-
 
 export const profile = {
     first_name: 'Kartikesh',

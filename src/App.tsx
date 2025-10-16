@@ -29,29 +29,27 @@ function Home({ setPdfFile }:HomeProps){
           <div className='flex-horizontal about-wrapper'>
             <div className='about'>
               <p className="about-para">
-                {About.main}
+                {About.head}
               </p>
               {
                 isExpanded ? (
                   <>
-                    {About.para.map((text, id) =>{
+                    {About.body.map((text, id) =>{
                       return (
-                        <>
-                        <p key={id} className='about-para'>
-                          {text}
-                        </p>
-                        </>
+                        <p key={id} className='about-para'>{text}</p>
                       );
-                      
                     })}
+                    <p className="about-para">{About.foot}</p>
                   </>
                 ):(
-                  <p className="more-button" onClick={toggleExpand}>
-                    <a>Read More</a>
-                  </p>
+                  <>
+                    <p className="about-para">{About.foot}</p>
+                    <p className="more-button" onClick={toggleExpand}>
+                      <a>Read More</a>
+                    </p>
+                  </>
                 )
               }
-              
               <br></br>
               <br></br>
             </div>
@@ -76,6 +74,7 @@ function Home({ setPdfFile }:HomeProps){
 
 function App() {
   const [pdf_file, setPdfFile] = useState(pdfs[0]);
+  const lastUpdated: Date = new Date(__BUILD_TIME__);
   return (
     <Router>
       <Navbar />
@@ -90,7 +89,7 @@ function App() {
       </main>
       <footer>
         <div className="footer">
-          <p>&copy; 2024 Kartikesh Mishra.</p>
+          <p>&copy; {new Date().getFullYear()} Kartikesh Mishra. {lastUpdated && `Last updated: ${lastUpdated.toLocaleString()}`}</p>
         </div>
       </footer>
     </Router>
