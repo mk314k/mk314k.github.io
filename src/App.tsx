@@ -26,7 +26,7 @@ function Home({ setPdfFile }:HomeProps){
     <>
       <div className="container flex-vertical">
           <h2 className="section-title">About me</h2>
-          <div className='flex-horizontal'>
+          <div className='flex-horizontal about-wrapper'>
             <div className='about'>
               <p className="about-para">
                 {About.main}

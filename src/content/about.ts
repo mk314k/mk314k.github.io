@@ -1,5 +1,5 @@
 export const About = {
-    main: `Hi! I’m Kartikesh, an MEng student in MIT’s EECS Department specializing in AI and Machine Learning. My current research focuses on inverse imaging problems, 
+    main: `Hi! I’m Kartikesh, an MEng student in MIT’s EECS Department specializing in AI and Machine Learning. My current research focuses on inverse problem in imaging applications, 
             where I combine plug-and-play solvers, CNN-based denoisers, and reinforcement learning techniques. I’m especially interested in meta-learning and interpretability 
             for vision and language models, aiming to understand patterns that support highly generalized learning. My academic interests also include analysis, probability, 
             software design, and philosophy.`,

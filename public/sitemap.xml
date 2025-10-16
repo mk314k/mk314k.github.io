@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://mk314k.github.io/</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://mk314k.github.io/project</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mk314k.github.io/resume</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mk314k.github.io/writing</loc>
+    <priority>0.6</priority>
+  </url>
+</urlset>
+
