@@ -3,11 +3,12 @@ import { Repository, getRepositories } from './GithubAPI';
 import './portfolio.css';
 // import { FaGithub } from 'react-icons/fa';
 
-const categories = ["All", "AI-ML", "WebApp", "Game", "Library", "Others"];
+const categories = ["All", "AI-ML", "WebApp", "Game", "Library", "Others"] as const;
+type Category = typeof categories[number];
 
 const Portfolio: React.FC<{ username: string }> = ({ username }) => {
   const [repositories, setRepositories] = useState<Repository[]>([]);
-  const [selectedCategory, setSelectedCategory] = useState<string>("All");
+  const [selectedCategory, setSelectedCategory] = useState<Category>("All");
   const defaultImg = "https://raw.githubusercontent.com/mk314k/mk314k.github.io/main/assets/logo.png";
 
   useEffect(() => {
@@ -21,11 +22,17 @@ const Portfolio: React.FC<{ username: string }> = ({ username }) => {
   }, [username]);
 
   const filterRepositories = () => {
-    if (selectedCategory === "All") {
-      return repositories;
+    const known = ["ai-ml", "webapp", "game", "library"];
+    if (selectedCategory === "All") return repositories;
+    if (selectedCategory === "Others") {
+      return repositories.filter((repo) => {
+        const topics = repo.topics.map((t) => t.toLowerCase());
+        return !topics.some((t) => known.includes(t));
+      });
     }
+    const selected = selectedCategory.toLowerCase();
     return repositories.filter((repo) =>
-      repo.topics.some((topic) => topic.toLowerCase() === selectedCategory.toLowerCase())
+      repo.topics.map((t) => t.toLowerCase()).some((t) => t === selected)
     );
   };
 
