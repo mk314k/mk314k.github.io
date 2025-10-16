@@ -13,13 +13,13 @@ export function SideBar(){
             <br />
             {profile.sidebar.map((descrip_group, ix)=>{
                 return (
-                    <div className="flex-vertical">
+                    <div className="flex-vertical" key={`${ix}div`}>
                         {descrip_group.map((descrip, iy)=>{
                             return (
                                 <p key={`${ix}${iy}`} className="subtitle">{descrip}</p>
                             );
                         })}
-                        <span className="br"></span>
+                        <span className="br" key={ix}></span>
                     </div>
                 );
             })}
