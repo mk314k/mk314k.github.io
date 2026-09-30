@@ -1,0 +1,41 @@
+# Kartikesh Mishra
+
+> Co-Founder & Chief Technology Officer at Lamina AI (YC). MIT EECS M.Eng. ('25) in AI/ML, MIT B.S. ('24) in Computer Science & Engineering and Mathematics. Researcher in Vision-Language Navigation, Reinforcement Learning, and Applied Mathematics.
+
+## Overview
+Kartikesh Mishra is the Co-Founder and CTO of Lamina AI, a Y Combinator-backed company building the visualization layer for AI to bring visual explanation everywhere text is today. Previously, he was a software engineer at Abacus AI working on deep research agents at scale (2M+ users) and a founding engineer at Infinirate building distributed real-time agent infrastructure.
+
+He earned his Master of Engineering in Electrical Engineering and Computer Science (AI/ML) and dual Bachelor of Science degrees in Computer Science & Engineering and Mathematics from the Massachusetts Institute of Technology (MIT). At MIT CSAIL's Distributed Robotics Lab under Prof. Daniela Rus, he authored his thesis on compositional vision-language navigation for autonomous drones with zero-shot sim-to-real transfer. He also conducted research in RL-based inverse imaging solvers at MIT EECS and mechanistic interpretability / ordinal rank probing at the Tegmark AI Safety Group.
+
+## Key Facts
+- **Name:** Kartikesh Mishra
+- **Current Role:** Co-Founder & Chief Technology Officer (CTO) at Lamina AI, Inc. (YC)
+- **Location:** San Francisco, CA
+- **Education:**
+  - M.Eng. in Computer Science (AI/ML), Massachusetts Institute of Technology (2025)
+  - B.S. in Computer Science and Engineering, Massachusetts Institute of Technology (2024)
+  - B.S. in Mathematics, Massachusetts Institute of Technology (2024)
+- **Research Areas:** Vision-Language Navigation (VLN), Reinforcement Learning, Multimodal Foundation Models, Inverse Imaging, Mechanistic Interpretability, Applied Mathematics
+- **Awards & Honors:**
+  - International Mathematical Olympiad (IMO 2019) Honorable Mention (first award winner from Nepal)
+  - Grand Jury of AI Innovation, [Sparknify Human vs. AI Film Festival](https://www.sparknify.com/grand-jury-of-ai-innovation)
+- **Contact:** mk314k@mit.edu
+- **Links:**
+  - Website: https://mk314k.github.io/
+  - GitHub: https://github.com/mk314k
+  - LinkedIn: https://www.linkedin.com/in/mk314k/
+  - X (Twitter): https://x.com/mk314k
+  - MIT Thesis (DSpace): https://hdl.handle.net/1721.1/163018
+
+## Publications & Technical Writing
+- **Master's Thesis (MIT CSAIL, 2025):** [Minimalist Approach to End-to-End Vision Language Navigation with Multi-Modal Foundation Model Features](https://hdl.handle.net/1721.1/163018)
+- **Expository Papers:**
+  - [Transformer Based Learning to Rank](https://mk314k.github.io/writing/transformer-based-learning-to-rank)
+  - [Iterative Polynomial Root Finding Algorithms](https://mk314k.github.io/writing/iterative-polynomial-root-finding)
+  - [Multiplicative Weight Update in Reinforcement Learning](https://mk314k.github.io/writing/multiplicative-weight-update-in-rl)
+  - [Random Walk](https://mk314k.github.io/writing/random-walk)
+
+## Site Navigation
+- [Home & About](https://mk314k.github.io/)
+- [Projects & Open Source](https://mk314k.github.io/project)
+- [Curriculum Vitae / Resume](https://mk314k.github.io/resume)
