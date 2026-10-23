@@ -1,18 +1,38 @@
 import React from 'react';
+import { Link, useParams } from 'react-router-dom';
+import { writings } from '../content/about';
 
-export const PdfViewer: React.FC<{ file_name: string }> = ({ file_name }) =>{
-  const encoded = encodeURIComponent(file_name);
-  const base = import.meta.env.BASE_URL || './';
-  const src = `${base}content/pdf/${encoded}.pdf`;
+export const PdfViewer: React.FC = () => {
+  const { slug } = useParams<{ slug: string }>();
+  const writing = writings.find((w) => w.slug === slug);
+
+  if (!writing) {
+    return (
+      <div className='container pdf-view'>
+        <h2 className='section-title'>Writing not found</h2>
+        <p>No piece matches “{slug}”.</p>
+        <ul>
+          {writings.map((w) => (
+            <li key={w.slug}><Link to={`/writing/${w.slug}`}>{w.title}</Link></li>
+          ))}
+        </ul>
+      </div>
+    );
+  }
+
+  const src = `${import.meta.env.BASE_URL}content/pdf/${encodeURIComponent(writing.file)}.pdf`;
+
   return (
-    <div style={{ height: '750px', width: '100%' }}>
-      <h1>{file_name}</h1>
+    <div className='container pdf-view'>
+      <h2 className='section-title'>{writing.title}</h2>
+      {/* iframe PDF rendering is unreliable on mobile browsers, so always offer a direct link. */}
+      <p className='pdf-download'>
+        <a href={src} target="_blank" rel="noopener noreferrer">Open the PDF in a new tab</a>
+      </p>
       <iframe
+        className='pdf-frame'
         src={src}
-        width="100%"
-        height="100%"
-        title="PDF Viewer"
-        style={{ border: 'none' }}
+        title={writing.title}
       ></iframe>
     </div>
   );
