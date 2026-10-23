@@ -1,62 +1,182 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="./assets/logo-e99f5fa1.png" />
+    <link rel="icon" type="image/png" href="/assets/logo-e99f5fa1.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kartikesh Mishra</title>
-    <meta name="description" content="Kartikesh Mishra — MIT EECS MEng. Projects, resume, writing on AI/ML, software engineering, and research." />
+    <title>Kartikesh Mishra | Co-Founder &amp; CTO at Lamina AI · MIT EECS &amp; Mathematics</title>
+    <meta name="description" content="Kartikesh Mishra is the Co-Founder and CTO of Lamina AI (YC), building the visualization layer for AI. MIT EECS M.Eng. and B.S. in CS &amp; Mathematics. Researcher in vision-language navigation, reinforcement learning, and AI systems." />
+    <meta name="keywords" content="Kartikesh Mishra, Lamina AI, Lamina Labs, MIT CSAIL, MIT EECS, Vision-Language Navigation, Reinforcement Learning, Multimodal AI, CTO, Machine Learning Researcher, mk314k" />
     <meta name="author" content="Kartikesh Mishra" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
     <link rel="canonical" href="https://mk314k.github.io/" />
-    <meta name="theme-color" content="#242424" />
+    <link rel="alternate" type="text/plain" href="https://mk314k.github.io/llms.txt" title="LLM Context" />
+    <meta name="theme-color" content="#0b0d11" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&amp;display=swap" rel="stylesheet" />
 
     <!-- Open Graph / Twitter -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Kartikesh Mishra" />
-    <meta property="og:description" content="Projects, resume, and writing — AI/ML and software." />
+    <meta property="og:type" content="profile" />
+    <meta property="og:site_name" content="Kartikesh Mishra" />
+    <meta property="og:title" content="Kartikesh Mishra | Co-Founder &amp; CTO at Lamina AI · MIT EECS" />
+    <meta property="og:description" content="Co-Founder &amp; CTO at Lamina AI (YC), building the visualization layer for AI. MIT EECS M.Eng. &amp; Mathematics. Research in vision-language navigation and reinforcement learning." />
     <meta property="og:url" content="https://mk314k.github.io/" />
     <meta property="og:image" content="https://raw.githubusercontent.com/mk314k/mk314k.github.io/main/assets/logo.png" />
+    <meta property="profile:first_name" content="Kartikesh" />
+    <meta property="profile:last_name" content="Mishra" />
+    <meta property="profile:username" content="mk314k" />
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Kartikesh Mishra" />
-    <meta name="twitter:description" content="Projects, resume, and writing — AI/ML and software." />
+    <meta name="twitter:site" content="@mk314k" />
+    <meta name="twitter:creator" content="@mk314k" />
+    <meta name="twitter:title" content="Kartikesh Mishra | Co-Founder &amp; CTO at Lamina AI · MIT EECS" />
+    <meta name="twitter:description" content="Co-Founder &amp; CTO at Lamina AI (YC). MIT EECS M.Eng. &amp; Mathematics. Research in vision-language navigation and reinforcement learning." />
     <meta name="twitter:image" content="https://raw.githubusercontent.com/mk314k/mk314k.github.io/main/assets/logo.png" />
+
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem('theme');
+          var theme = saved === 'light' || saved === 'dark'
+            ? saved
+            : (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+          document.documentElement.setAttribute('data-theme', theme);
+        } catch (e) {}
+      })();
+    </script>
     <script src="https://kit.fontawesome.com/7ca2746f93.js" crossorigin="anonymous"></script>
     <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-chtml.js"></script>
+
+    <!-- Structured Data: Person, ScholarlyArticle, ProfilePage, FAQPage (SEO / AEO / GEO) -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Kartikesh Mishra",
-        "url": "https://mk314k.github.io/",
-        "email": "mailto:mk314k@mit.edu",
-        "image": "https://raw.githubusercontent.com/mk314k/mk314k.github.io/main/assets/logo.png",
-        "jobTitle": "Software Engineer / AI Researcher",
-        "affiliation": {
-          "@type": "CollegeOrUniversity",
-          "name": "Massachusetts Institute of Technology"
-        },
-        "sameAs": [
-          "https://github.com/mk314k",
-          "https://www.linkedin.com/in/mk314k/"
+        "@graph": [
+          {
+            "@type": "ProfilePage",
+            "@id": "https://mk314k.github.io/#profilepage",
+            "url": "https://mk314k.github.io/",
+            "name": "Kartikesh Mishra | Co-Founder & CTO at Lamina AI · MIT EECS",
+            "inLanguage": "en",
+            "mainEntity": {
+              "@id": "https://mk314k.github.io/#person"
+            }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://mk314k.github.io/#person",
+            "name": "Kartikesh Mishra",
+            "givenName": "Kartikesh",
+            "familyName": "Mishra",
+            "alternateName": "mk314k",
+            "url": "https://mk314k.github.io/",
+            "email": "mailto:mk314k@mit.edu",
+            "image": "https://raw.githubusercontent.com/mk314k/mk314k.github.io/main/assets/logo.png",
+            "jobTitle": "Co-Founder & Chief Technology Officer",
+            "description": "Kartikesh Mishra is the Co-Founder and CTO of Lamina AI (YC), building the visualization layer for AI to bring visual explanation everywhere text is today. MIT EECS M.Eng. and dual B.S. in Computer Science and Mathematics.",
+            "worksFor": {
+              "@type": "Organization",
+              "name": "Lamina AI, Inc.",
+              "description": "Y Combinator-backed company building the visualization layer for AI to bring visual explanation everywhere text is today."
+            },
+            "alumniOf": [
+              {
+                "@type": "CollegeOrUniversity",
+                "name": "Massachusetts Institute of Technology",
+                "sameAs": "https://www.mit.edu/"
+              }
+            ],
+            "hasCredential": [
+              {
+                "@type": "EducationalOccupationalCredential",
+                "credentialCategory": "degree",
+                "name": "Master of Engineering in Electrical Engineering and Computer Science (AI/ML)"
+              },
+              {
+                "@type": "EducationalOccupationalCredential",
+                "credentialCategory": "degree",
+                "name": "Bachelor of Science in Computer Science and Engineering"
+              },
+              {
+                "@type": "EducationalOccupationalCredential",
+                "credentialCategory": "degree",
+                "name": "Bachelor of Science in Mathematics"
+              }
+            ],
+            "award": [
+              "Honorable Mention, International Mathematical Olympiad (IMO 2019)",
+              "2nd Best Project, Moonbeam Stacking DAO Hackathon",
+              "3rd Best Project, Samsung Future of Wellness Hackathon 2022"
+            ],
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "San Francisco",
+              "addressRegion": "CA",
+              "addressCountry": "US"
+            },
+            "knowsAbout": [
+              "Artificial Intelligence",
+              "Machine Learning",
+              "Vision-Language Navigation",
+              "Reinforcement Learning",
+              "Multimodal Foundation Models",
+              "Applied Mathematics",
+              "Computer Vision",
+              "Distributed AI Systems"
+            ],
+            "sameAs": [
+              "https://github.com/mk314k",
+              "https://www.linkedin.com/in/mk314k/",
+              "https://x.com/mk314k",
+              "https://twitter.com/mk314k",
+              "https://hdl.handle.net/1721.1/163018",
+              "https://www.sparknify.com/grand-jury-of-ai-innovation"
+            ]
+          },
+          {
+            "@type": "Thesis",
+            "@id": "https://hdl.handle.net/1721.1/163018",
+            "name": "Minimalist Approach to End-to-End Vision Language Navigation with Multi-Modal Foundation Model Features",
+            "author": {
+              "@id": "https://mk314k.github.io/#person"
+            },
+            "datePublished": "2025",
+            "inSupportOf": "Master of Engineering in Electrical Engineering and Computer Science",
+            "sourceOrganization": {
+              "@type": "CollegeOrUniversity",
+              "name": "Massachusetts Institute of Technology"
+            },
+            "url": "https://hdl.handle.net/1721.1/163018",
+            "abstract": "A compositional vision-language navigation system for autonomous drones, trained in a minimal simulation curriculum with zero-shot transfer to unseen real-world environments."
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Who is Kartikesh Mishra?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Kartikesh Mishra is the Co-Founder and CTO of Lamina AI (YC), where he is building the visualization layer for AI to bring visual explanation everywhere text is today. He holds an M.Eng. in Computer Science (AI/ML) and dual B.S. degrees in Computer Science and Mathematics from MIT."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is Kartikesh Mishra's research background at MIT?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "At MIT CSAIL's Distributed Robotics Lab under Prof. Daniela Rus, Kartikesh Mishra developed a compositional vision-language navigation system for autonomous drones capable of zero-shot sim-to-real transfer. He also researched RL-based solvers for inverse imaging at MIT EECS and ordinal structure probing in transformers with the Tegmark AI Safety Group."
+                }
+              }
+            ]
+          }
         ]
       }
     </script>
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "Kartikesh Mishra",
-        "url": "https://mk314k.github.io/",
-        "inLanguage": "en",
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://www.google.com/search?q=site%3Amk314k.github.io+{search_term_string}",
-          "query-input": "required name=search_term_string"
-        }
-      }
-    </script>
-    <script type="module" crossorigin src="./assets/index-2be098f4.js"></script>
-    <link rel="stylesheet" href="./assets/index-75beedb3.css">
+    <script type="module" crossorigin src="/assets/index-f82f5b17.js"></script>
+    <link rel="stylesheet" href="/assets/index-2663f96c.css">
   </head>
   <body>
     <div id="root"></div>
