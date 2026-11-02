@@ -3,6 +3,7 @@ import { Repository, getRepositories } from './GithubAPI';
 import './portfolio.css';
 
 const categories = ["All", "AI-ML", "WebApp", "Game", "Library", "Others"];
+const PRIMARY_CATEGORY_TOPICS = new Set(["ai-ml", "webapp", "game", "library"]);
 
 const Portfolio: React.FC<{ username: string }> = ({ username }) => {
   const [repositories, setRepositories] = useState<Repository[]>([]);
@@ -22,6 +23,12 @@ const Portfolio: React.FC<{ username: string }> = ({ username }) => {
   const filterRepositories = () => {
     if (selectedCategory === "All") {
       return repositories;
+    }
+    if (selectedCategory === "Others") {
+      return repositories.filter((repo) =>
+        repo.topics.some((t) => t.toLowerCase() === "others") ||
+        !repo.topics.some((t) => PRIMARY_CATEGORY_TOPICS.has(t.toLowerCase()))
+      );
     }
     return repositories.filter((repo) =>
       repo.topics.some((topic) => topic.toLowerCase() === selectedCategory.toLowerCase())
