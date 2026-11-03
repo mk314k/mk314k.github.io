@@ -231,9 +231,15 @@ export const resume = {
         },
         {
             name: "Pyssemble & AssemblyTS",
-            tools: ["Python", "TypeScript", "RISC-V", "PyPI"],
-            description: "Open-source assembly interpreter, RISC-V execution tracer, and interactive debugging library published to PyPI.",
-            code: "https://github.com/mk314k/Pyssemble",
+            tools: ["Python", "TypeScript", "RISC-V (RV32IM)", "ARM (AArch32)"],
+            description: "Multi-architecture (RISC-V RV32IM & ARM AArch32) two-pass assembler, interactive web IDE, and Python EDSL debugger.",
+            code: "https://github.com/mk314k/AssemblyTS",
+        },
+        {
+            name: "OctoCloud",
+            tools: ["TypeScript", "WebRTC", "GitHub API", "Serverless DB"],
+            description: "Serverless GitHub authentication, sandboxed cloud file/table store (GitTable), and verified WebRTC P2P multiplayer SDK for static apps.",
+            code: "https://github.com/mk314k/octocloud",
         },
         {
             name: "ReKnew",

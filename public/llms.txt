@@ -39,3 +39,10 @@ He earned his Master of Engineering in Electrical Engineering and Computer Scien
 - [Home & About](https://mk314k.github.io/)
 - [Projects & Open Source](https://mk314k.github.io/project)
 - [Curriculum Vitae / Resume](https://mk314k.github.io/resume)
+
+## Featured Open-Source Projects
+- **AssemblyTS & Pyssemble:** Interactive RISC-V (`RV32IM`) and ARM (`AArch32`) two-pass assembler, browser IDE, and Python EDSL debugger ([Live IDE](https://mk314k.github.io/AssemblyTS/), [GitHub](https://github.com/mk314k/AssemblyTS)).
+- **OctoCloud (`octocloud`):** Serverless GitHub authentication, sandboxed cloud file & relational table store (`GitTable`), and verified WebRTC P2P multiplayer SDK ([npm](https://www.npmjs.com/package/octocloud), [GitHub](https://github.com/mk314k/octocloud)).
+- **StateBinder (`statebinderk`):** Reactive DOM state and style binding library in TypeScript ([GitHub](https://github.com/mk314k/StateBinder)).
+- **3DAttnVAE-GAN:** Single-view 3D shape reconstruction network with variational autoencoders, self-attention, and adversarial training ([GitHub](https://github.com/mk314k/3DAttnVAE-GAN)).
+
