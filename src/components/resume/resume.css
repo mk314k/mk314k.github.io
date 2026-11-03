@@ -279,6 +279,43 @@ section {
     margin-right: 1em;
 }
 
+.skill-section {
+    width: 100%;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    padding: 1.15rem 1.25rem;
+    box-sizing: border-box;
+}
+
+.skill-section .flex-horizontal {
+    display: block;
+    margin-bottom: 0.85rem;
+    padding-bottom: 0.65rem;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.skill-section .flex-horizontal:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.skill-section h3 {
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+    margin-bottom: 0.25rem;
+}
+
+.skill-section p {
+    font-size: 0.84rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+}
+
 @media only screen and (min-width: 960px) {
     .experience-section {
         flex: 1 1 68%;
@@ -288,38 +325,5 @@ section {
     .skill-section {
         flex: 0 0 27%;
         width: 27%;
-        background: var(--bg-card);
-        border: 1px solid var(--border-subtle);
-        border-radius: 12px;
-        padding: 1.15rem 1.25rem;
-        box-sizing: border-box;
-    }
-
-    .skill-section .flex-horizontal {
-        display: block;
-        margin-bottom: 0.85rem;
-        padding-bottom: 0.65rem;
-        border-bottom: 1px solid var(--border-subtle);
-    }
-
-    .skill-section .flex-horizontal:last-child {
-        margin-bottom: 0;
-        padding-bottom: 0;
-        border-bottom: none;
-    }
-
-    .skill-section h3 {
-        font-family: var(--font-mono);
-        font-size: 0.74rem;
-        text-transform: uppercase;
-        letter-spacing: 0.04em;
-        color: var(--accent);
-        margin-bottom: 0.25rem;
-    }
-
-    .skill-section p {
-        font-size: 0.84rem;
-        line-height: 1.5;
-        color: var(--text-secondary);
     }
 }
