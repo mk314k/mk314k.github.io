@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/assets/logo-e99f5fa1.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transformer Based Learning to Rank | Kartikesh Mishra · MIT Expository Paper</title>
+    <meta name="description" content="Expository paper on Transformer Based Learning to Rank by Kartikesh Mishra (MIT EECS & Mathematics)." />
+    <meta name="keywords" content="Kartikesh Mishra, Lamina AI, Lamina Labs, MIT CSAIL, MIT EECS, Vision-Language Navigation, Reinforcement Learning, Multimodal AI, CTO, Machine Learning Researcher, mk314k, AssemblyTS, Pyssemble, OctoCloud" />
+    <meta name="author" content="Kartikesh Mishra" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+    <link rel="canonical" href="https://mk314k.github.io/writing/transformer-based-learning-to-rank" />
+    <link rel="alternate" type="text/plain" href="https://mk314k.github.io/llms.txt" title="LLM Context" />
+    <meta name="theme-color" content="#0b0d11" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&amp;display=swap" rel="stylesheet" />
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="profile" />
+    <meta property="og:site_name" content="Kartikesh Mishra" />
+    <meta property="og:title" content="Transformer Based Learning to Rank | Kartikesh Mishra · MIT Expository Paper" />
+    <meta property="og:description" content="Expository paper on Transformer Based Learning to Rank by Kartikesh Mishra (MIT EECS & Mathematics)." />
+    <meta property="og:url" content="https://mk314k.github.io/writing/transformer-based-learning-to-rank" />
+    <meta property="og:image" content="https://mk314k.github.io/assets/profile.jpeg" />
+    <meta property="profile:first_name" content="Kartikesh" />
+    <meta property="profile:last_name" content="Mishra" />
+    <meta property="profile:username" content="mk314k" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@mk314k" />
+    <meta name="twitter:creator" content="@mk314k" />
+    <meta name="twitter:title" content="Transformer Based Learning to Rank | Kartikesh Mishra · MIT Expository Paper" />
+    <meta name="twitter:description" content="Expository paper on Transformer Based Learning to Rank by Kartikesh Mishra (MIT EECS & Mathematics)." />
+    <meta name="twitter:image" content="https://mk314k.github.io/assets/profile.jpeg" />
+
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem('theme');
+          var theme = saved === 'light' || saved === 'dark'
+            ? saved
+            : (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+          document.documentElement.setAttribute('data-theme', theme);
+        } catch (e) {}
+      })();
+    </script>
+    <script src="https://kit.fontawesome.com/7ca2746f93.js" crossorigin="anonymous"></script>
+
+    <!-- Structured Data: Person, Thesis, SoftwareSourceCode, ProfilePage, FAQPage (SEO / AEO / GEO) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "ProfilePage",
+            "@id": "https://mk314k.github.io/#profilepage",
+            "url": "https://mk314k.github.io/",
+            "name": "Kartikesh Mishra | Co-Founder & CTO at Lamina AI · MIT EECS",
+            "inLanguage": "en",
+            "mainEntity": {
+              "@id": "https://mk314k.github.io/#person"
+            }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://mk314k.github.io/#person",
+            "name": "Kartikesh Mishra",
+            "givenName": "Kartikesh",
+            "familyName": "Mishra",
+            "alternateName": "mk314k",
+            "url": "https://mk314k.github.io/",
+            "email": "mailto:mk314k@mit.edu",
+            "image": "https://mk314k.github.io/assets/profile.jpeg",
+            "jobTitle": "Co-Founder & Chief Technology Officer",
+            "description": "Kartikesh Mishra is the Co-Founder and CTO of Lamina AI (YC), building the visualization layer for AI to bring visual explanation everywhere text is today. MIT EECS M.Eng. and dual B.S. in Computer Science and Mathematics.",
+            "worksFor": {
+              "@type": "Organization",
+              "name": "Lamina AI, Inc.",
+              "description": "Y Combinator-backed company building the visualization layer for AI to bring visual explanation everywhere text is today."
+            },
+            "alumniOf": [
+              {
+                "@type": "CollegeOrUniversity",
+                "name": "Massachusetts Institute of Technology",
+                "sameAs": "https://www.mit.edu/"
+              }
+            ],
+            "hasCredential": [
+              {
+                "@type": "EducationalOccupationalCredential",
+                "credentialCategory": "degree",
+                "name": "Master of Engineering in Electrical Engineering and Computer Science (AI/ML)"
+              },
+              {
+                "@type": "EducationalOccupationalCredential",
+                "credentialCategory": "degree",
+                "name": "Bachelor of Science in Computer Science and Engineering"
+              },
+              {
+                "@type": "EducationalOccupationalCredential",
+                "credentialCategory": "degree",
+                "name": "Bachelor of Science in Mathematics"
+              }
+            ],
+            "award": [
+              "Honorable Mention, International Mathematical Olympiad (IMO 2019)",
+              "2nd Best Project, Moonbeam Stacking DAO Hackathon",
+              "3rd Best Project, Samsung Future of Wellness Hackathon 2022"
+            ],
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "San Francisco",
+              "addressRegion": "CA",
+              "addressCountry": "US"
+            },
+            "knowsAbout": [
+              "Artificial Intelligence",
+              "Machine Learning",
+              "Vision-Language Navigation",
+              "Reinforcement Learning",
+              "Multimodal Foundation Models",
+              "Applied Mathematics",
+              "Computer Vision",
+              "Distributed AI Systems"
+            ],
+            "sameAs": [
+              "https://github.com/mk314k",
+              "https://www.linkedin.com/in/mk314k/",
+              "https://x.com/mk314k",
+              "https://twitter.com/mk314k",
+              "https://hdl.handle.net/1721.1/163018",
+              "https://www.sparknify.com/grand-jury-of-ai-innovation"
+            ]
+          },
+          {
+            "@type": "Thesis",
+            "@id": "https://hdl.handle.net/1721.1/163018",
+            "name": "Minimalist Approach to End-to-End Vision Language Navigation with Multi-Modal Foundation Model Features",
+            "author": {
+              "@id": "https://mk314k.github.io/#person"
+            },
+            "datePublished": "2025",
+            "inSupportOf": "Master of Engineering in Electrical Engineering and Computer Science",
+            "sourceOrganization": {
+              "@type": "CollegeOrUniversity",
+              "name": "Massachusetts Institute of Technology"
+            },
+            "url": "https://hdl.handle.net/1721.1/163018",
+            "abstract": "A compositional vision-language navigation system for autonomous drones, trained in a minimal simulation curriculum with zero-shot transfer to unseen real-world environments."
+          },
+          {
+            "@type": "ItemList",
+            "name": "Selected Open-Source Projects by Kartikesh Mishra",
+            "itemListElement": [
+              {
+                "@type": "SoftwareSourceCode",
+                "position": 1,
+                "name": "AssemblyTS",
+                "codeRepository": "https://github.com/mk314k/AssemblyTS",
+                "url": "https://mk314k.github.io/AssemblyTS/",
+                "programmingLanguage": "TypeScript",
+                "author": { "@id": "https://mk314k.github.io/#person" },
+                "description": "Interactive RISC-V (RV32IM) and ARM (AArch32) assembly language IDE, two-pass assembler, and step debugger in the browser."
+              },
+              {
+                "@type": "SoftwareSourceCode",
+                "position": 2,
+                "name": "Pyssemble",
+                "codeRepository": "https://github.com/mk314k/Pyssemble",
+                "programmingLanguage": "Python",
+                "author": { "@id": "https://mk314k.github.io/#person" },
+                "description": "Pythonic RISC-V (RV32IM) and ARM (AArch32) embedded DSL, two-pass assembler, and step debugger."
+              },
+              {
+                "@type": "SoftwareSourceCode",
+                "position": 3,
+                "name": "OctoCloud",
+                "codeRepository": "https://github.com/mk314k/octocloud",
+                "url": "https://www.npmjs.com/package/octocloud",
+                "programmingLanguage": "TypeScript",
+                "author": { "@id": "https://mk314k.github.io/#person" },
+                "description": "Serverless GitHub authentication, sandboxed cloud repository file & relational table store (GitTable), and verified WebRTC P2P multiplayer SDK."
+              },
+              {
+                "@type": "SoftwareSourceCode",
+                "position": 4,
+                "name": "3DAttnVAE-GAN",
+                "codeRepository": "https://github.com/mk314k/3DAttnVAE-GAN",
+                "programmingLanguage": "Python",
+                "author": { "@id": "https://mk314k.github.io/#person" },
+                "description": "Single-view 3D shape reconstruction network combining variational autoencoders, self-attention blocks, and adversarial training on ShapeNetCore."
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Who is Kartikesh Mishra?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Kartikesh Mishra is the Co-Founder and CTO of Lamina AI (YC), where he is building the visualization layer for AI to bring visual explanation everywhere text is today. He holds an M.Eng. in Computer Science (AI/ML) and dual B.S. degrees in Computer Science and Mathematics from MIT."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is Kartikesh Mishra's research background at MIT?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "At MIT CSAIL's Distributed Robotics Lab under Prof. Daniela Rus, Kartikesh Mishra developed a compositional vision-language navigation system for autonomous drones capable of zero-shot sim-to-real transfer. He also researched RL-based solvers for inverse imaging at MIT EECS and ordinal structure probing in transformers with the Tegmark AI Safety Group."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is Lamina AI?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Lamina AI is a Y Combinator-backed company co-founded by Kartikesh Mishra (CTO) that builds the visualization layer for AI, bringing interactive visual explanation everywhere text is today."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What open-source projects has Kartikesh Mishra created?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Kartikesh Mishra has created several open-source systems and AI projects, including AssemblyTS and Pyssemble (multi-architecture RISC-V RV32IM and ARM AArch32 assemblers and debuggers), OctoCloud (serverless GitHub auth, cloud file/table store, and WebRTC P2P multiplayer SDK), StateBinder (reactive DOM state binding library), 3DAttnVAE-GAN, and CTRL-MoE."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <script type="module" crossorigin src="/assets/index-fcfe9cd5.js"></script>
+    <link rel="stylesheet" href="/assets/index-78f4a548.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>
+      <main style="max-width: 840px; margin: 2rem auto; padding: 1.5rem; font-family: system-ui, sans-serif; line-height: 1.6;">
+        <h1>Kartikesh Mishra — Co-Founder &amp; CTO at Lamina AI (YC) · MIT EECS &amp; Mathematics</h1>
+        <p>
+          Hi, I’m Kartikesh Mishra. I am the Co-Founder and Chief Technology Officer of <strong>Lamina AI (YC)</strong>,
+          where we are building the visualization layer for AI and working to bring visual explanation everywhere text is today.
+        </p>
+        <p>
+          Before starting Lamina, I was a software engineer at Abacus AI building factual verification and report regeneration
+          pipelines for deep research agents (2M+ users), and a founding engineer at Infinirate architecting distributed real-time
+          agent infrastructure.
+        </p>
+        <h2>Education &amp; MIT CSAIL Research</h2>
+        <ul>
+          <li><strong>M.Eng. in Computer Science (AI/ML)</strong>, Massachusetts Institute of Technology (2025)</li>
+          <li><strong>B.S. in Computer Science and Engineering</strong> &amp; <strong>B.S. in Mathematics</strong>, MIT (2024)</li>
+          <li>
+            <strong>Master&apos;s Thesis (MIT CSAIL, Distributed Robotics Lab):</strong>
+            <a href="https://hdl.handle.net/1721.1/163018">Minimalist Approach to End-to-End Vision Language Navigation with Multi-Modal Foundation Model Features</a>
+          </li>
+        </ul>
+        <h2>Expository Notes &amp; Technical Papers</h2>
+        <ul>
+          <li><a href="https://mk314k.github.io/writing/transformer-based-learning-to-rank">Transformer Based Learning to Rank</a> (<a href="https://mk314k.github.io/content/pdf/Transformer%20Based%20Learning%20to%20Rank.pdf">PDF</a>)</li>
+          <li><a href="https://mk314k.github.io/writing/iterative-polynomial-root-finding">Iterative Polynomial Root Finding Algorithms</a> (<a href="https://mk314k.github.io/content/pdf/Iterative%20Polynomial%20Root%20Finding%20Algorithms.pdf">PDF</a>)</li>
+          <li><a href="https://mk314k.github.io/writing/multiplicative-weight-update-in-rl">Multiplicative Weight Update in Reinforcement Learning</a> (<a href="https://mk314k.github.io/content/pdf/Multiplicative%20Weight%20Update%20in%20Reinforcement%20Learning.pdf">PDF</a>)</li>
+          <li><a href="https://mk314k.github.io/writing/random-walk">Random Walk</a> (<a href="https://mk314k.github.io/content/pdf/Random%20Walk.pdf">PDF</a>)</li>
+        </ul>
+        <h2>Selected Open-Source Projects</h2>
+        <ul>
+          <li><a href="https://mk314k.github.io/AssemblyTS/">AssemblyTS</a> &amp; <a href="https://github.com/mk314k/Pyssemble">Pyssemble</a> — Multi-architecture RISC-V (RV32IM) and ARM (AArch32) two-pass assembler, browser IDE, and Python EDSL debugger.</li>
+          <li><a href="https://github.com/mk314k/octocloud">OctoCloud</a> — Serverless GitHub Auth, Sandboxed Cloud File &amp; Table Store, and WebRTC P2P Multiplayer SDK.</li>
+          <li><a href="https://github.com/mk314k/StateBinder">StateBinder</a> — Reactive DOM state binding library in TypeScript.</li>
+          <li><a href="https://github.com/mk314k/3DAttnVAE-GAN">3DAttnVAE-GAN</a> — Single-view 3D shape reconstruction network with self-attention and adversarial training.</li>
+        </ul>
+        <p>
+          <a href="https://mk314k.github.io/resume">Curriculum Vitae / Resume</a> ·
+          <a href="https://mk314k.github.io/project">Projects</a> ·
+          <a href="https://mk314k.github.io/llms.txt">LLM Context (llms.txt)</a> ·
+          <a href="https://github.com/mk314k">GitHub</a> ·
+          <a href="https://www.linkedin.com/in/mk314k/">LinkedIn</a>
+        </p>
+      </main>
+    </noscript>
+    
+  </body>
+</html>
