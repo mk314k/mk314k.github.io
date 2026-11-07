@@ -4,29 +4,22 @@ import './portfolio.css';
 
 const categories = ["All", "AI-ML", "WebApp", "Game", "Library", "Others"];
 const PRIMARY_CATEGORY_TOPICS = new Set(["ai-ml", "webapp", "game", "library"]);
+const GIF_PREFERRED_TOPICS = new Set(["webapp", "game", "ai-ml", "research"]);
 
-// Repositories that use animated display.gif previews
-const GIF_REPOS = new Set([
-  "assemblyts",
-  "3dattnvae-gan",
-  "buttongame",
-  "sentimint",
-  "2048",
-]);
+/**
+ * Determine initial preview format dynamically from the repository's topics:
+ * - WebApp, Game, and AI-ML / Research projects prefer `display.gif` (with fallback to `display.webp`).
+ * - Libraries and Systems packages prefer `display.webp` (with fallback to `display.gif`).
+ */
+function getInitialMedia(username: string, repo: Repository): { url: string; ext: 'gif' | 'webp' } {
+  const lowerTopics = repo.topics.map((t) => t.toLowerCase());
+  const prefersGif =
+    !lowerTopics.includes('library') &&
+    lowerTopics.some((t) => GIF_PREFERRED_TOPICS.has(t));
 
-// Repositories known to use schematic fallback (avoids 404 image console noise)
-const NO_PREVIEW_REPOS = new Set([
-  "ctrl-moe",
-  "symmetric_optimizer_study",
-  "reknew",
-  "soundspy",
-]);
-
-function getInitialMediaUrl(username: string, repoName: string): { url: string; ext: 'gif' | 'webp' } {
-  const lower = repoName.toLowerCase();
-  const ext: 'gif' | 'webp' = GIF_REPOS.has(lower) ? 'gif' : 'webp';
+  const ext: 'gif' | 'webp' = prefersGif ? 'gif' : 'webp';
   return {
-    url: `https://raw.githubusercontent.com/${username}/${repoName}/main/display.${ext}`,
+    url: `https://raw.githubusercontent.com/${username}/${repo.name}/main/display.${ext}`,
     ext,
   };
 }
@@ -94,10 +87,9 @@ const Portfolio: React.FC<{ username: string }> = ({ username }) => {
                 </div>
               ))
             : filterRepositories().map((repo) => {
-                const lowerName = repo.name.toLowerCase();
-                const hasNoPreview = NO_PREVIEW_REPOS.has(lowerName) || Boolean(failedImages[repo.id]);
+                const hasNoPreview = Boolean(failedImages[repo.id]);
                 const visibleTopics = repo.topics.slice(0, 4);
-                const initialMedia = getInitialMediaUrl(username, repo.name);
+                const initialMedia = getInitialMedia(username, repo);
 
                 return (
                   <div key={repo.id} className="card">
@@ -133,15 +125,15 @@ const Portfolio: React.FC<{ username: string }> = ({ username }) => {
                         <img
                           className='card-display'
                           src={initialMedia.url}
-                          data-attempt={initialMedia.ext}
+                          data-attempt="primary"
                           loading="lazy"
                           alt={`${repo.name} preview`}
                           onError={(e) => {
                             const target = e.target as HTMLImageElement;
-                            const attempted = target.getAttribute('data-attempt');
-                            if (attempted === 'gif') {
-                              target.setAttribute('data-attempt', 'webp');
-                              target.src = `https://raw.githubusercontent.com/${username}/${repo.name}/main/display.webp`;
+                            if (target.getAttribute('data-attempt') === 'primary') {
+                              const fallbackExt = initialMedia.ext === 'gif' ? 'webp' : 'gif';
+                              target.setAttribute('data-attempt', 'fallback');
+                              target.src = `https://raw.githubusercontent.com/${username}/${repo.name}/main/display.${fallbackExt}`;
                             } else {
                               setFailedImages((prev) => ({ ...prev, [repo.id]: true }));
                             }
