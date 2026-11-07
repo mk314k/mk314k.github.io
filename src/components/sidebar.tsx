@@ -1,7 +1,6 @@
 import { profile } from "../content/about";
 import { SocialIcon } from "./social_icons";
 import { Link } from "react-router-dom";
-import profileImg from "../../assets/profile.jpeg";
 
 export function SideBar(){
     return (
@@ -10,7 +9,7 @@ export function SideBar(){
             <div className='fullname flex-vertical'>
               <div className="avatar-frame">
                 <img
-                  src={profileImg}
+                  src={`${import.meta.env.BASE_URL}assets/profile.jpeg`}
                   alt={`${profile.first_name} ${profile.last_name}`}
                   className="profile-avatar"
                 />

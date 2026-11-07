@@ -644,6 +644,44 @@ footer {
     align-items: flex-start;
 }
 
+.pdf-top-nav {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.pdf-back-link {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--accent);
+    align-self: flex-start;
+}
+
+.pdf-switcher {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+}
+
+.pdf-header-row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+    margin-bottom: 0.95rem;
+}
+
+.pdf-tag {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 0.2rem;
+}
+
 .pdf-download {
     margin: 0.25rem 0 0.9rem;
     font-family: var(--font-mono);

@@ -221,6 +221,37 @@
   color: #0b0d11;
 }
 
+/* Loading Skeleton Cards */
+@keyframes pulse-skeleton {
+  0%, 100% { opacity: 0.45; }
+  50% { opacity: 0.85; }
+}
+
+.card-skeleton {
+  pointer-events: none;
+  animation: pulse-skeleton 1.6s ease-in-out infinite;
+}
+
+.skeleton-line {
+  height: 0.85rem;
+  width: 100%;
+  border-radius: 6px;
+  background: var(--bg-elevated);
+}
+
+.skeleton-title {
+  height: 1.2rem;
+  width: 58%;
+}
+
+.skeleton-short {
+  width: 72%;
+}
+
+.skeleton-media {
+  background: var(--bg-elevated);
+}
+
 @media only screen and (max-width: 540px) {
   .card-container {
     grid-template-columns: 1fr;
