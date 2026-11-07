@@ -1,11 +1,48 @@
-import { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate, Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate, Link, useLocation } from 'react-router-dom';
 import { Resume } from './components/resume/resume';
 import Portfolio from './components/portfolio/Portfolio';
 import { About, profile, thesis, writings } from './content/about';
 import { SideBar } from './components/sidebar';
 import { Navbar } from './components/navbar';
 import PdfViewer from './components/pdfview';
+
+const DEFAULT_TITLE = 'Kartikesh Mishra | Co-Founder & CTO at Lamina AI · MIT EECS & Mathematics';
+const DEFAULT_DESC = 'Kartikesh Mishra is the Co-Founder and CTO of Lamina AI (YC), building the visualization layer for AI. MIT EECS M.Eng. and B.S. in CS & Mathematics. Researcher in vision-language navigation, reinforcement learning, and AI systems.';
+
+function RouteMetaUpdater() {
+  const location = useLocation();
+
+  useEffect(() => {
+    const path = location.pathname;
+    let title = DEFAULT_TITLE;
+    let desc = DEFAULT_DESC;
+    let canonical = `https://mk314k.github.io${path === '/' ? '/' : path}`;
+
+    if (path === '/resume') {
+      title = 'Resume & CV | Kartikesh Mishra · Co-Founder & CTO at Lamina AI · MIT EECS';
+      desc = 'Curriculum Vitae and engineering resume of Kartikesh Mishra — Co-Founder & CTO at Lamina AI (YC), MIT EECS M.Eng. in AI/ML, dual B.S. in Computer Science and Mathematics.';
+    } else if (path === '/project') {
+      title = 'Projects & Open Source | Kartikesh Mishra · MIT EECS & Lamina AI';
+      desc = 'Selected open-source systems, machine learning research, and engineering projects by Kartikesh Mishra, including AssemblyTS, Pyssemble, OctoCloud, 3DAttnVAE-GAN, and CTRL-MoE.';
+    } else if (path.startsWith('/writing/')) {
+      const slug = path.replace('/writing/', '');
+      const found = writings.find((w) => w.slug === slug);
+      if (found) {
+        title = `${found.title} | Kartikesh Mishra · Expository Paper`;
+        desc = `${found.title} (${found.tag || 'Technical Note'}) by Kartikesh Mishra, MIT EECS & Mathematics.`;
+      }
+    }
+
+    document.title = title;
+    const descMeta = document.querySelector('meta[name="description"]');
+    if (descMeta) descMeta.setAttribute('content', desc);
+    const canonLink = document.querySelector('link[rel="canonical"]');
+    if (canonLink) canonLink.setAttribute('href', canonical);
+  }, [location.pathname]);
+
+  return null;
+}
 
 function Home(){
   const [isExpanded, setExpanded] = useState(false);
@@ -90,6 +127,7 @@ function App() {
   });
   return (
     <Router>
+      <RouteMetaUpdater />
       <Navbar />
       <div className="page-shell">
         <SideBar />

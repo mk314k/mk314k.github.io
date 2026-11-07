@@ -77,6 +77,7 @@ export async function getRepositories(username: string): Promise<Repository[]> {
 
       if (response.data.length === 0) break;
       repositories.push(...response.data);
+      if (response.data.length < 100) break;
       page++;
     }
 
